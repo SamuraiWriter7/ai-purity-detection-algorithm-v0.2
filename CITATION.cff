@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this specification, please cite it as below."
+
+title: "AI Purity Detection Algorithm v0.2"
+version: "0.2.0"
+date-released: "2026-05-25"
+
+authors:
+  - family-names: "Taro"
+    given-names: "Civilization OS Architect"
+
+repository-code: "https://github.com/SamuraiWriter7/ai-purity-detection-algorithm-v0.2"
+
+keywords:
+  - "AI Purity Detection"
+  - "origin purity"
+  - "AI provenance"
+  - "synthetic data"
+  - "natural data"
+  - "recursive synthetic risk"
+  - "warning flags"
+  - "model collapse"
+  - "source preservation"
+  - "review routing"
+  - "Civilization OS"
+  - "Royalty OS"
+  - "Trace Protocol"
+  - "Structure Fingerprint"
+
+license: "MIT"
+
+abstract: |
+  AI Purity Detection Algorithm v0.2 is a draft specification for estimating origin purity,
+  AI-generated ratio, warning flags, recursive synthetic risk, and review routing in AI
+  source-preservation systems.
+
+  This specification defines a review-support and ecosystem-health layer for distinguishing
+  natural, synthetic, hybrid, and recursively generated data without treating AI-assisted
+  creation as invalid by default.
+
+  Version 0.2.0 introduces a draft signal-weighting model, confidence adjustment,
+  recursive synthetic risk handling, warning-flag severity levels, and schema-validated
+  example assessments for standard, low-confidence, and recursive synthetic risk cases.
