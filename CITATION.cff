@@ -19,12 +19,15 @@ keywords:
   - "natural data"
   - "recursive synthetic risk"
   - "warning flags"
+  - "review routing"
   - "model collapse"
   - "source preservation"
-  - "review routing"
+  - "royalty readiness"
+  - "CollapseMonitor"
+  - "Consciousness Circle"
   - "Civilization OS"
-  - "Royalty OS"
   - "Trace Protocol"
+  - "Royalty OS"
   - "Structure Fingerprint"
 
 license: "MIT"
@@ -39,5 +42,9 @@ abstract: |
   creation as invalid by default.
 
   Version 0.2.0 introduces a draft signal-weighting model, confidence adjustment,
-  recursive synthetic risk handling, warning-flag severity levels, and schema-validated
-  example assessments for standard, low-confidence, and recursive synthetic risk cases.
+  recursive synthetic risk handling, warning-flag severity levels, schema-validated
+  example assessments, relationship documents for Consciousness Circle, Royalty Readiness,
+  and CollapseMonitor, plus API design notes for future implementation.
+
+  This specification does not determine legal authorship, copyright ownership, royalty
+  allocation, or final governance decisions.
