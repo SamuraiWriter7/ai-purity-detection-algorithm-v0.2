@@ -1,0 +1,415 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/purity-assessment.schema.json",
+  "title": "Purity Assessment Schema",
+  "description": "Schema for validating purity assessment outputs in the AI Purity Detection Algorithm v0.2 draft.",
+  "type": "object",
+  "required": ["purity_assessment"],
+  "additionalProperties": false,
+  "properties": {
+    "purity_assessment": {
+      "type": "object",
+      "required": [
+        "id",
+        "epicenter_id",
+        "assessed_at",
+        "method",
+        "version",
+        "signals",
+        "outputs",
+        "review",
+        "downstream_use"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "epicenter_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assessed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "method": {
+          "type": "string",
+          "enum": ["manual", "auto", "hybrid"]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^0\\.[0-9]+\\.[0-9]+$"
+        },
+        "assessor": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "human_review",
+                "automated_system",
+                "multi_wing_review",
+                "hybrid_review"
+              ]
+            },
+            "system_id": {
+              "type": "string"
+            },
+            "reviewer_notes": {
+              "type": "string"
+            }
+          }
+        },
+        "signals": {
+          "type": "object",
+          "required": [
+            "provenance_evidence_score",
+            "author_declaration_score",
+            "structural_originality_score",
+            "revision_lineage_score",
+            "citation_transparency_score",
+            "ai_pattern_risk_score"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "provenance_evidence_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "author_declaration_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "structural_originality_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "revision_lineage_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "citation_transparency_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "ai_pattern_risk_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "structure_fingerprint_distinctiveness_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "recursive_synthetic_risk_score": {
+              "$ref": "#/$defs/signal_score"
+            },
+            "signal_confidence_quality_score": {
+              "$ref": "#/$defs/signal_score"
+            }
+          }
+        },
+        "outputs": {
+          "type": "object",
+          "required": [
+            "origin_purity_score",
+            "ai_generated_ratio",
+            "warning_flags"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "origin_purity_score": {
+              "$ref": "#/$defs/scored_output"
+            },
+            "ai_generated_ratio": {
+              "$ref": "#/$defs/scored_output"
+            },
+            "recursive_synthetic_risk": {
+              "$ref": "#/$defs/risk_output"
+            },
+            "warning_flags": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/warning_flag"
+              },
+              "uniqueItems": true
+            }
+          }
+        },
+        "review": {
+          "type": "object",
+          "required": ["required", "recommended", "reason"],
+          "additionalProperties": false,
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "recommended": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "downstream_use": {
+          "type": "object",
+          "required": [
+            "rag_indexing",
+            "training_use",
+            "royalty_readiness",
+            "collapse_monitoring"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rag_indexing": {
+              "$ref": "#/$defs/downstream_permission"
+            },
+            "training_use": {
+              "$ref": "#/$defs/downstream_permission"
+            },
+            "royalty_readiness": {
+              "type": "object",
+              "required": ["status", "notes"],
+              "additionalProperties": false,
+              "properties": {
+                "status": {
+                  "type": "string",
+                  "enum": [
+                    "not_ready",
+                    "review_ready",
+                    "ready",
+                    "blocked",
+                    "disputed"
+                  ]
+                },
+                "notes": {
+                  "type": "string"
+                }
+              }
+            },
+            "collapse_monitoring": {
+              "type": "object",
+              "required": ["include", "notes"],
+              "additionalProperties": false,
+              "properties": {
+                "include": {
+                  "type": "boolean"
+                },
+                "notes": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "scoring_model": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "version": {
+              "type": "string"
+            },
+            "base_score": {
+              "$ref": "#/$defs/score_value"
+            },
+            "confidence_adjustment": {
+              "$ref": "#/$defs/score_value"
+            },
+            "recursive_risk_adjustment": {
+              "$ref": "#/$defs/score_value"
+            },
+            "final_score": {
+              "$ref": "#/$defs/score_value"
+            }
+          }
+        },
+        "warning_flag_details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/warning_flag_detail"
+          }
+        },
+        "review_routing": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": ["none", "recommended", "required", "blocking_review"]
+            },
+            "reviewer_type": {
+              "type": "string",
+              "enum": [
+                "human",
+                "automated",
+                "multi_wing",
+                "governance",
+                "domain_expert"
+              ]
+            },
+            "reason": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "score_value": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "signal_score": {
+      "type": "object",
+      "required": ["value", "basis"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/score_value"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "scored_output": {
+      "type": "object",
+      "required": ["value", "confidence", "interpretation"],
+      "additionalProperties": false,
+      "properties": {
+        "value": {
+          "$ref": "#/$defs/score_value"
+        },
+        "confidence": {
+          "$ref": "#/$defs/score_value"
+        },
+        "interpretation": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "risk_output": {
+      "type": "object",
+      "required": ["level", "confidence", "basis"],
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["none", "low", "moderate", "high", "critical"]
+        },
+        "confidence": {
+          "$ref": "#/$defs/score_value"
+        },
+        "basis": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "warning_flag": {
+      "type": "string",
+      "enum": [
+        "missing_provenance",
+        "high_ai_pattern_similarity",
+        "declaration_conflict",
+        "low_confidence_score",
+        "recursive_synthetic_risk",
+        "origin_unclear",
+        "review_required",
+        "review_recommended",
+        "royalty_readiness_blocked"
+      ]
+    },
+    "warning_flag_detail": {
+      "type": "object",
+      "required": ["flag", "severity", "status", "explanation"],
+      "additionalProperties": false,
+      "properties": {
+        "flag": {
+          "$ref": "#/$defs/warning_flag"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["info", "warning", "review_required", "blocking"]
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "open",
+            "under_review",
+            "resolved",
+            "dismissed",
+            "superseded"
+          ]
+        },
+        "explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "recommended_action": {
+          "type": "string"
+        },
+        "downstream_impact": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "rag_indexing": {
+              "type": "string",
+              "enum": ["allowed", "conditional", "blocked"]
+            },
+            "training_use": {
+              "type": "string",
+              "enum": ["allowed", "conditional", "blocked"]
+            },
+            "royalty_readiness": {
+              "type": "string",
+              "enum": [
+                "ready",
+                "review_ready",
+                "not_ready",
+                "blocked",
+                "disputed"
+              ]
+            },
+            "collapse_monitoring": {
+              "type": "string",
+              "enum": ["include", "exclude"]
+            }
+          }
+        }
+      }
+    },
+    "downstream_permission": {
+      "type": "object",
+      "required": ["allowed", "notes"],
+      "additionalProperties": false,
+      "properties": {
+        "allowed": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string",
+              "enum": ["conditional", "unknown", "requires_permission"]
+            }
+          ]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
