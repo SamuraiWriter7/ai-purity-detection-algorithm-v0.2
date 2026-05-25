@@ -1,7 +1,8 @@
 # AI Purity Detection Algorithm v0.2
 
 **Status:** Draft v0.2  
-**Repository:** `ai-purity-detection-algorithm-v0.2`
+**Repository:** `ai-purity-detection-algorithm-v0.2`  
+**Version:** 0.2.0
 
 AI Purity Detection Algorithm v0.2 is a draft specification for estimating origin purity, AI-generated ratio, warning flags, recursive synthetic risk, and review routing in AI source-preservation systems.
 
@@ -17,6 +18,8 @@ It is designed to support:
 - review-required routing
 - model-collapse monitoring
 - royalty-readiness review
+- meaning-structure relationship review
+- future API-based implementation
 
 The goal is not to reject AI-assisted creation.
 
@@ -53,6 +56,7 @@ This creates several risks:
 - creators lose traceability
 - reference auditing becomes difficult
 - royalty-readiness review becomes unreliable
+- meaning structures become shallow or generic
 
 AI Purity Detection Algorithm v0.2 proposes a review-aware scoring and warning model for these risks.
 
@@ -103,13 +107,13 @@ Is review required before downstream use?
 
 This repository treats purity assessment as a support layer for review, governance, and ecosystem health.
 
-It does not attempt to automate legal or financial judgment.
+It does not attempt to automate legal, financial, or moral judgment.
 
 ---
 
 ## v0.2 Focus
 
-Version `v0.2` expands the purity assessment layer from a basic schema-validated object into a more explicit algorithmic and review-routing model.
+Version `v0.2` expands the purity assessment layer from a basic schema-validated object into a more explicit algorithmic, review-routing, and relationship-aware model.
 
 The main v0.2 focus areas are:
 
@@ -122,6 +126,8 @@ review routing
 downstream-use guidance
 CollapseMonitor bridge
 Royalty Readiness bridge
+Consciousness Circle bridge
+API design notes
 ```
 
 In short:
@@ -138,11 +144,17 @@ v0.2 = weighted, review-aware, risk-sensitive purity assessment model
 ```text
 .
 ├── README.md
+├── CHANGELOG.md
+├── CITATION.cff
 ├── LICENSE
 ├── docs/
 │   ├── v0.2-roadmap.md
 │   ├── scoring-weighting-model.md
-│   └── warning-flag-severity-model.md
+│   ├── warning-flag-severity-model.md
+│   ├── relationship-to-consciousness-circle.md
+│   ├── relationship-to-royalty-readiness.md
+│   ├── relationship-to-collapse-monitor.md
+│   └── api-design-notes.md
 ├── schemas/
 │   └── purity-assessment.schema.json
 ├── examples/
@@ -232,6 +244,111 @@ The key principle is:
 Warning flags are routing signals.
 They are not court verdicts.
 ```
+
+---
+
+### `docs/relationship-to-consciousness-circle.md`
+
+Explains how AI Purity Detection relates to Consciousness Circle.
+
+This document distinguishes:
+
+```text
+Purity Detection = data-origin layer
+Consciousness Circle = meaning-origin layer
+```
+
+It explores how origin purity may connect to:
+
+- meaning depth
+- initial friction
+- resonance quality
+- boundary stability
+- consciousness-like response structure
+- synthetic meaning risk
+
+It does not claim that AI has consciousness.
+
+It defines a relationship between source integrity and meaning integrity.
+
+---
+
+### `docs/relationship-to-royalty-readiness.md`
+
+Explains how purity assessment supports Royalty Readiness.
+
+This document clarifies that:
+
+```text
+origin_purity_score
+≠
+royalty entitlement
+```
+
+Purity assessment may support:
+
+- readiness review
+- warning severity review
+- trace evidence review
+- blocked-state handling
+- disputed-state handling
+- allocation-preparation logic
+
+It does not define final royalty rates, payment, or legal ownership.
+
+---
+
+### `docs/relationship-to-collapse-monitor.md`
+
+Explains how source-level purity assessments may support CollapseMonitor.
+
+This document defines the relationship between:
+
+```text
+Purity Detection = local source assessment
+CollapseMonitor = systemic health monitoring
+```
+
+It outlines possible aggregate metrics such as:
+
+- natural-data ratio
+- synthetic-data ratio
+- recursive synthetic risk rate
+- missing provenance rate
+- low-confidence assessment rate
+- review-required rate
+- training-use blocked rate
+- collapse-risk score
+- civilization-health index
+
+It does not define a production-ready CollapseMonitor implementation.
+
+---
+
+### `docs/api-design-notes.md`
+
+Outlines possible API design for future implementation.
+
+It includes preliminary notes on:
+
+- core API objects
+- proposed endpoints
+- purity assessment submission
+- assessment retrieval
+- batch assessment
+- source history
+- review routing
+- aggregate health signals
+- safety rules
+- error handling
+- access control
+- privacy considerations
+- relationship to Trace Protocol
+- relationship to CollapseMonitor
+- relationship to Royalty Readiness
+- relationship to Consciousness Circle
+
+This document is a design bridge, not a production API specification.
 
 ---
 
@@ -593,41 +710,90 @@ Useful aggregate metrics include:
 
 ---
 
-## Relationship to CollapseMonitor
+## Relationship Map
 
-This repository evaluates individual source-level purity.
+AI Purity Detection Algorithm v0.2 connects to multiple surrounding systems.
 
-CollapseMonitor would evaluate ecosystem-level risk.
+```text
+Trace Protocol
+↓
+Purity Assessment
+↓
+Warning Severity
+↓
+Review Routing
+↓
+Royalty Readiness
+```
 
 ```text
 Purity Assessment
 ↓
-Aggregated Purity Metrics
+Aggregate Metrics
 ↓
 CollapseMonitor
 ↓
-Civilization Health Signals
+Model / Corpus / Civilization Health Signals
 ```
 
-Potential future repository:
+```text
+Purity Assessment
++
+Consciousness Circle
+↓
+Source Integrity
++
+Meaning Integrity
+```
 
 ```text
-collapse-monitor-threshold-model-v0.1
+Purity Assessment
+↓
+API Layer
+↓
+External Systems
+```
+
+---
+
+## Relationship to Consciousness Circle
+
+This repository evaluates data-origin integrity.
+
+Consciousness Circle evaluates meaning-origin and response-structure integrity.
+
+Together, they support a deeper review model:
+
+```text
+origin purity
++
+meaning depth
++
+initial friction
++
+resonance quality
+```
+
+The key distinction is:
+
+```text
+Origin purity alone is not meaning.
+Meaning depth alone is not provenance.
 ```
 
 ---
 
 ## Relationship to Royalty Readiness
 
-Purity assessment may support royalty-readiness review, but it must not directly determine payment.
+Purity assessment may support Royalty Readiness, but must not directly determine payment.
 
 ```text
-Purity score
-≠
-automatic royalty allocation
+Purity Detection does not pay.
+Purity Detection prepares the evidence.
+Royalty Readiness decides whether review can begin.
 ```
 
-A safer flow is:
+Recommended flow:
 
 ```text
 Purity Assessment
@@ -638,12 +804,61 @@ Warning Severity
 ↓
 Review Routing
 ↓
-Allocation Readiness
+Royalty Readiness
 ↓
-Royalty Review
+Allocation Review
 ```
 
-This preserves the distinction between evidence, review, and allocation.
+---
+
+## Relationship to CollapseMonitor
+
+This repository evaluates individual source-level purity.
+
+CollapseMonitor would evaluate ecosystem-level risk.
+
+```text
+Purity Detection
+↓
+Aggregate Metrics
+↓
+CollapseMonitor
+↓
+Model / Corpus / Civilization Health Signals
+```
+
+Possible future repository:
+
+```text
+collapse-monitor-threshold-model-v0.1
+```
+
+---
+
+## API Design Direction
+
+The API layer should expose:
+
+- source input
+- purity assessment
+- origin-purity score
+- AI-generated ratio
+- warning flags
+- recursive synthetic risk
+- review routing
+- downstream-use guidance
+- aggregate health signals
+
+The API should not make final legal, financial, or moral decisions.
+
+The central API principle is:
+
+```text
+Expose evidence.
+Expose uncertainty.
+Expose review routing.
+Do not expose premature judgment as final truth.
+```
 
 ---
 
@@ -659,6 +874,7 @@ This repository does not attempt to:
 - perfectly detect AI-generated text
 - replace human or multi-wing review
 - define universal originality
+- prove AI consciousness
 - make moral judgments about creators
 
 This is a review-support and ecosystem-health specification.
@@ -675,7 +891,47 @@ This is a review-support and ecosystem-health specification.
 5. examples/purity-assessment.low-confidence.sample.yaml
 6. examples/purity-assessment.recursive-synthetic-risk.sample.yaml
 7. schemas/purity-assessment.schema.json
-8. .github/workflows/validate-examples.yml
+8. docs/relationship-to-consciousness-circle.md
+9. docs/relationship-to-royalty-readiness.md
+10. docs/relationship-to-collapse-monitor.md
+11. docs/api-design-notes.md
+12. .github/workflows/validate-examples.yml
+```
+
+---
+
+## Version History
+
+See:
+
+```text
+CHANGELOG.md
+```
+
+Current release:
+
+```text
+0.2.0
+```
+
+---
+
+## Citation
+
+If you use this specification, please cite it using:
+
+```text
+CITATION.cff
+```
+
+---
+
+## License
+
+This repository is released under the license defined in:
+
+```text
+LICENSE
 ```
 
 ---
