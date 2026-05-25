@@ -1,0 +1,91 @@
+purity_assessment:
+  id: "purity_assessment_low_confidence_001"
+  epicenter_id: "epicenter_uncertain_001"
+  assessed_at: "2026-05-25T00:00:00Z"
+  method: "hybrid"
+  version: "0.1.0"
+
+  assessor:
+    type: "multi_wing_review"
+    system_id: "epicenter-preservation-os"
+    reviewer_notes: "Assessment confidence is low due to weak provenance, unclear origin, and incomplete signal coverage."
+
+  signals:
+    provenance_evidence_score:
+      value: 0.25
+      basis:
+        - "publication_timestamp_unavailable"
+        - "platform_metadata_incomplete"
+        - "archive_record_unavailable"
+
+    author_declaration_score:
+      value: 0.30
+      basis:
+        - "creator_declaration_missing"
+        - "ai_assistance_level_unknown"
+
+    structural_originality_score:
+      value: 0.42
+      basis:
+        - "some_original_framing_detected"
+        - "structure_not_sufficiently_distinctive"
+        - "possible_derivative_summary_pattern"
+
+    revision_lineage_score:
+      value: 0.20
+      basis:
+        - "revision_history_unavailable"
+        - "no_clear_version_chain"
+
+    citation_transparency_score:
+      value: 0.28
+      basis:
+        - "external_dependencies_unclear"
+        - "source_references_partially_missing"
+
+    ai_pattern_risk_score:
+      value: 0.63
+      basis:
+        - "moderate_ai_assisted_rhetorical_patterns_detected"
+        - "generic_explanatory_structure_detected"
+        - "low_specificity_in_key_sections"
+
+  outputs:
+    origin_purity_score:
+      value: 0.36
+      confidence: 0.42
+      interpretation: "low_confidence_origin_unclear_review_required"
+
+    ai_generated_ratio:
+      value: 0.58
+      confidence: 0.45
+      interpretation: "possible_ai_primary_or_heavily_ai_assisted"
+
+    warning_flags:
+      - "missing_provenance"
+      - "low_confidence_score"
+      - "origin_unclear"
+      - "review_required"
+      - "royalty_readiness_blocked"
+
+  review:
+    required: true
+    recommended: true
+    reason: "Origin evidence is weak, confidence is low, and the assessment should not proceed to royalty-readiness without review."
+
+  downstream_use:
+    rag_indexing:
+      allowed: "conditional"
+      notes: "May be indexed only with uncertainty metadata and provenance warnings."
+
+    training_use:
+      allowed: "requires_permission"
+      notes: "Training use should not proceed without creator permission, provenance clarification, and platform-policy review."
+
+    royalty_readiness:
+      status: "blocked"
+      notes: "Royalty-readiness transition is blocked until provenance and origin uncertainty are reviewed."
+
+    collapse_monitoring:
+      include: true
+      notes: "Include as a low-confidence and origin-unclear signal for ecosystem-level purity monitoring."
