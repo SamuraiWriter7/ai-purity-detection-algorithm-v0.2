@@ -1,0 +1,86 @@
+purity_assessment:
+  id: "purity_assessment_001"
+  epicenter_id: "epicenter_001"
+  assessed_at: "2026-05-25T00:00:00Z"
+  method: "hybrid"
+  version: "0.1.0"
+
+  assessor:
+    type: "multi_wing_review"
+    system_id: "ai-purity-detection-algorithm"
+    reviewer_notes: "Automated signals were combined with structural review."
+
+  signals:
+    provenance_evidence_score:
+      value: 0.85
+      basis:
+        - "publication_timestamp_available"
+        - "platform_metadata_available"
+        - "revision_history_partially_available"
+
+    author_declaration_score:
+      value: 0.80
+      basis:
+        - "creator_declared_ai_assistance"
+        - "ai_used_for_drafting_and_formatting_support"
+
+    structural_originality_score:
+      value: 0.92
+      basis:
+        - "original_protocol_structure"
+        - "unique_layered_concept"
+        - "non_generic_taxonomy"
+
+    revision_lineage_score:
+      value: 0.70
+      basis:
+        - "initial_publication_timestamp_available"
+        - "limited_revision_history_available"
+
+    citation_transparency_score:
+      value: 0.65
+      basis:
+        - "related_protocols_referenced"
+        - "external_dependencies_partially_stated"
+
+    ai_pattern_risk_score:
+      value: 0.22
+      basis:
+        - "some_ai_assisted_rhetorical_patterns_detected"
+        - "core_structure_remains_distinctive"
+
+  outputs:
+    origin_purity_score:
+      value: 0.80
+      confidence: 0.74
+      interpretation: "likely_human_primary_or_structurally_original"
+
+    ai_generated_ratio:
+      value: 0.28
+      confidence: 0.66
+      interpretation: "ai_assisted_but_not_ai_primary"
+
+    warning_flags:
+      - "review_recommended"
+
+  review:
+    required: false
+    recommended: true
+    reason: "AI assistance is likely, but provenance and structural originality are strong."
+
+  downstream_use:
+    rag_indexing:
+      allowed: true
+      notes: "Suitable for RAG reference with provenance metadata."
+
+    training_use:
+      allowed: "conditional"
+      notes: "Allowed only if creator permission and platform policy permit training use."
+
+    royalty_readiness:
+      status: "review_ready"
+      notes: "May proceed to reference-weight aggregation after trace verification."
+
+    collapse_monitoring:
+      include: true
+      notes: "Useful as a natural or hybrid source signal for corpus purity monitoring."
