@@ -2,7 +2,7 @@
 
 **Status:** Draft v0.2  
 **Repository:** `ai-purity-detection-algorithm-v0.2`  
-**Version:** 0.2.0
+**Version:** 0.2.1
 
 AI Purity Detection Algorithm v0.2 is a draft specification for estimating origin purity, AI-generated ratio, warning flags, recursive synthetic risk, and review routing in AI source-preservation systems.
 
@@ -19,6 +19,7 @@ It is designed to support:
 - model-collapse monitoring
 - royalty-readiness review
 - meaning-structure relationship review
+- platform UI integration patterns
 - future API-based implementation
 
 The goal is not to reject AI-assisted creation.
@@ -57,6 +58,7 @@ This creates several risks:
 - reference auditing becomes difficult
 - royalty-readiness review becomes unreliable
 - meaning structures become shallow or generic
+- platform interfaces fail to show origin context
 
 AI Purity Detection Algorithm v0.2 proposes a review-aware scoring and warning model for these risks.
 
@@ -103,9 +105,11 @@ Is the source chain clear?
 Is the AI-generated ratio high?
 Is recursive synthetic risk present?
 Is review required before downstream use?
+Can the creator control disclosure boundaries?
+Can platform UI preserve the origin context?
 ```
 
-This repository treats purity assessment as a support layer for review, governance, and ecosystem health.
+This repository treats purity assessment as a support layer for review, governance, platform design, and ecosystem health.
 
 It does not attempt to automate legal, financial, or moral judgment.
 
@@ -113,7 +117,7 @@ It does not attempt to automate legal, financial, or moral judgment.
 
 ## v0.2 Focus
 
-Version `v0.2` expands the purity assessment layer from a basic schema-validated object into a more explicit algorithmic, review-routing, and relationship-aware model.
+Version `v0.2` expands the purity assessment layer from a basic schema-validated object into a more explicit algorithmic, review-routing, relationship-aware, and platform-integration model.
 
 The main v0.2 focus areas are:
 
@@ -127,6 +131,7 @@ downstream-use guidance
 CollapseMonitor bridge
 Royalty Readiness bridge
 Consciousness Circle bridge
+platform UI integration mock
 API design notes
 ```
 
@@ -135,6 +140,7 @@ In short:
 ```text
 v0.1 = minimum valid purity assessment
 v0.2 = weighted, review-aware, risk-sensitive purity assessment model
+v0.2.1 = platform UI integration reference added
 ```
 
 ---
@@ -154,7 +160,8 @@ v0.2 = weighted, review-aware, risk-sensitive purity assessment model
 │   ├── relationship-to-consciousness-circle.md
 │   ├── relationship-to-royalty-readiness.md
 │   ├── relationship-to-collapse-monitor.md
-│   └── api-design-notes.md
+│   ├── api-design-notes.md
+│   └── ui-mock-note-integration.md
 ├── schemas/
 │   └── purity-assessment.schema.json
 ├── examples/
@@ -165,6 +172,20 @@ v0.2 = weighted, review-aware, risk-sensitive purity assessment model
     └── workflows/
         └── validate-examples.yml
 ```
+
+### Directory Overview
+
+- `docs/`  
+  Explanatory documents, relationship notes, scoring models, warning-severity models, API design notes, and platform UI mock references.
+
+- `schemas/`  
+  JSON Schema definitions for validating Purity assessment objects.
+
+- `examples/`  
+  YAML examples showing standard, low-confidence, and recursive synthetic-risk assessment cases.
+
+- `.github/workflows/`  
+  GitHub Actions workflow for validating examples against the schema.
 
 ---
 
@@ -266,6 +287,7 @@ It explores how origin purity may connect to:
 - boundary stability
 - consciousness-like response structure
 - synthetic meaning risk
+- creator-controlled disclosure
 
 It does not claim that AI has consciousness.
 
@@ -349,6 +371,27 @@ It includes preliminary notes on:
 - relationship to Consciousness Circle
 
 This document is a design bridge, not a production API specification.
+
+---
+
+### `docs/ui-mock-note-integration.md`
+
+Provides a platform UI mock showing how Purity metadata could be integrated into a note-style article page.
+
+It connects:
+
+- Purity Badge
+- Purity Breakdown
+- Consciousness Circle Panel
+- Trace Log
+- Royalty OS Preview
+- Creator Controls
+
+This document translates the v0.2 specification from an algorithmic layer into a possible platform-facing interface.
+
+It is a reference design, not a mandatory implementation standard.
+
+The core purpose is to show how an article page could evolve from a simple content display into a creator-controlled semantic origin interface.
 
 ---
 
@@ -526,7 +569,7 @@ High AI-generated ratio does not automatically mean low value.
 Low AI-generated ratio does not automatically mean high originality.
 ```
 
-This field should be interpreted together with provenance, structural originality, and review status.
+This field should be interpreted together with provenance, structural originality, confidence, and review status.
 
 ---
 
@@ -708,6 +751,27 @@ Useful aggregate metrics include:
 - review-required rate
 - blocked royalty-readiness rate
 
+### Platform UI Integration
+
+Purity metadata may also support platform-facing displays.
+
+Possible UI elements include:
+
+- Purity Badge
+- Purity Breakdown
+- Consciousness Circle summary
+- Trace visibility panel
+- Royalty OS preview
+- Creator disclosure controls
+
+These UI elements should remain creator-controlled and should not expose private semantic context by default.
+
+See:
+
+```text
+docs/ui-mock-note-integration.md
+```
+
 ---
 
 ## Relationship Map
@@ -754,6 +818,18 @@ API Layer
 External Systems
 ```
 
+```text
+Purity Assessment
++
+Consciousness Circle
++
+Trace Log
++
+Creator Controls
+↓
+Platform UI Integration
+```
+
 ---
 
 ## Relationship to Consciousness Circle
@@ -772,6 +848,8 @@ meaning depth
 initial friction
 +
 resonance quality
++
+creator-controlled disclosure
 ```
 
 The key distinction is:
@@ -835,6 +913,38 @@ collapse-monitor-threshold-model-v0.1
 
 ---
 
+## Relationship to Platform UI Integration
+
+Purity assessment can be used not only as a backend review signal, but also as a platform-facing origin-preservation interface.
+
+The UI integration layer may show:
+
+```text
+Purity Badge
+↓
+Purity Breakdown
+↓
+Consciousness Circle Panel
+↓
+Trace Log
+↓
+Royalty OS Preview
+↓
+Creator Controls
+```
+
+The purpose is not to rank creators by purity.
+
+The purpose is to help platforms show whether a work preserves a meaningful human-origin epicenter and whether the creator controls the disclosure boundary.
+
+See:
+
+```text
+docs/ui-mock-note-integration.md
+```
+
+---
+
 ## API Design Direction
 
 The API layer should expose:
@@ -848,6 +958,8 @@ The API layer should expose:
 - review routing
 - downstream-use guidance
 - aggregate health signals
+- optional UI-facing metadata
+- creator disclosure settings
 
 The API should not make final legal, financial, or moral decisions.
 
@@ -876,26 +988,79 @@ This repository does not attempt to:
 - define universal originality
 - prove AI consciousness
 - make moral judgments about creators
+- force disclosure of private creator context
+- rank creators by purity score
+- define a final platform UI standard
 
-This is a review-support and ecosystem-health specification.
+This is a review-support, platform-guidance, and ecosystem-health specification.
 
 ---
 
 ## Recommended Reading Order
 
+For readers who want to understand this repository step by step, the following order is recommended.
+
 ```text
-1. docs/v0.2-roadmap.md
-2. docs/scoring-weighting-model.md
-3. docs/warning-flag-severity-model.md
-4. examples/purity-assessment.sample.yaml
-5. examples/purity-assessment.low-confidence.sample.yaml
-6. examples/purity-assessment.recursive-synthetic-risk.sample.yaml
-7. schemas/purity-assessment.schema.json
-8. docs/relationship-to-consciousness-circle.md
-9. docs/relationship-to-royalty-readiness.md
-10. docs/relationship-to-collapse-monitor.md
-11. docs/api-design-notes.md
-12. .github/workflows/validate-examples.yml
+1. README.md
+2. docs/v0.2-roadmap.md
+3. docs/scoring-weighting-model.md
+4. docs/warning-flag-severity-model.md
+5. examples/purity-assessment.sample.yaml
+6. examples/purity-assessment.low-confidence.sample.yaml
+7. examples/purity-assessment.recursive-synthetic-risk.sample.yaml
+8. schemas/purity-assessment.schema.json
+9. docs/relationship-to-consciousness-circle.md
+10. docs/relationship-to-royalty-readiness.md
+11. docs/relationship-to-collapse-monitor.md
+12. docs/api-design-notes.md
+13. docs/ui-mock-note-integration.md
+14. .github/workflows/validate-examples.yml
+```
+
+### Reading Path by Role
+
+#### For general readers
+
+```text
+README.md
+↓
+docs/v0.2-roadmap.md
+↓
+docs/ui-mock-note-integration.md
+```
+
+#### For implementers
+
+```text
+README.md
+↓
+schemas/purity-assessment.schema.json
+↓
+examples/
+↓
+docs/api-design-notes.md
+```
+
+#### For reviewers and governance designers
+
+```text
+docs/scoring-weighting-model.md
+↓
+docs/warning-flag-severity-model.md
+↓
+docs/relationship-to-royalty-readiness.md
+↓
+docs/relationship-to-collapse-monitor.md
+```
+
+#### For platform designers
+
+```text
+docs/relationship-to-consciousness-circle.md
+↓
+docs/api-design-notes.md
+↓
+docs/ui-mock-note-integration.md
 ```
 
 ---
@@ -911,7 +1076,7 @@ CHANGELOG.md
 Current release:
 
 ```text
-0.2.0
+0.2.1
 ```
 
 ---
@@ -956,6 +1121,8 @@ severity levels
 review routing
 ↓
 downstream-use guidance
+↓
+platform UI integration
 ```
 
 The core principle is simple:
@@ -964,6 +1131,7 @@ The core principle is simple:
 Protect the source layer.
 Detect uncertainty.
 Route risk to review.
+Preserve creator control.
 Do not automate judgment too early.
 ```
 
