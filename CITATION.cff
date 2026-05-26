@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this specification, please cite it as below."
 
 title: "AI Purity Detection Algorithm v0.2"
-version: "0.2.0"
-date-released: "2026-05-25"
+version: "0.2.1"
+date-released: "2026-05-26"
 
 authors:
   - family-names: "Taro"
@@ -29,6 +29,9 @@ keywords:
   - "Trace Protocol"
   - "Royalty OS"
   - "Structure Fingerprint"
+  - "platform UI integration"
+  - "Creator Controls"
+  - "semantic origin preservation"
 
 license: "MIT"
 
@@ -41,10 +44,15 @@ abstract: |
   natural, synthetic, hybrid, and recursively generated data without treating AI-assisted
   creation as invalid by default.
 
-  Version 0.2.0 introduces a draft signal-weighting model, confidence adjustment,
+  Version 0.2.0 introduced a draft signal-weighting model, confidence adjustment,
   recursive synthetic risk handling, warning-flag severity levels, schema-validated
   example assessments, relationship documents for Consciousness Circle, Royalty Readiness,
   and CollapseMonitor, plus API design notes for future implementation.
+
+  Version 0.2.1 adds a platform UI integration reference for note-style article pages,
+  showing how Purity metadata, Consciousness Circle metadata, Trace logs, Royalty OS
+  previews, and Creator Controls may appear in a creator-controlled semantic origin
+  interface.
 
   This specification does not determine legal authorship, copyright ownership, royalty
   allocation, or final governance decisions.
