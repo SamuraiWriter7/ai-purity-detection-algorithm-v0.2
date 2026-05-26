@@ -1,5 +1,62 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+---
+
+## [0.2.1] - 2026-05-26
+
+### Added
+
+- Added `docs/ui-mock-note-integration.md`.
+  - Provides a platform UI mock for integrating Purity metadata into a note-style article page.
+  - Shows how the following components may appear in a platform interface:
+    - Purity Badge
+    - Purity Breakdown
+    - Consciousness Circle Panel
+    - Trace Log
+    - Royalty OS Preview
+    - Creator Controls
+  - Defines this UI mock as a reference design, not a mandatory implementation standard.
+  - Clarifies that platform UI integration should preserve creator-controlled disclosure boundaries.
+
+### Updated
+
+- Updated `README.md` to include `docs/ui-mock-note-integration.md` in:
+  - Repository Structure
+  - Key Documents
+  - Downstream Use Guidance
+  - Relationship Map
+  - Relationship to Platform UI Integration
+  - API Design Direction
+  - Non-Goals
+  - Recommended Reading Order
+  - Reading Path by Role
+  - Summary
+
+### Clarified
+
+- Clarified that Purity metadata may support platform-facing displays, but should not be used to rank creators by purity score.
+- Clarified that UI-facing Purity indicators should not treat AI assistance as negative by default.
+- Clarified that Deep Layer and creator-sensitive semantic metadata should remain private by default.
+- Clarified the distinction between:
+  - backend purity assessment
+  - semantic origin preservation
+  - trace visibility
+  - allocation-readiness preview
+  - final royalty or payment execution
+
+### Notes
+
+- This release does not modify the core schema.
+- This release does not modify existing examples.
+- This release does not change the validation workflow.
+- This is a documentation and platform-integration reference update.
+
+---
+
+# Changelog
+
 All notable changes to this repository will be documented in this file.
 
 This project follows a draft-oriented versioning model while the specification remains experimental.
