@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this specification, please cite it as below."
 
 title: "AI Purity Detection Algorithm v0.2"
-version: "0.2.1"
-date-released: "2026-05-26"
+version: "0.2.2"
+date-released: "2026-05-27"
 
 authors:
   - family-names: "Taro"
