@@ -56,3 +56,8 @@ abstract: |
 
   This specification does not determine legal authorship, copyright ownership, royalty
   allocation, or final governance decisions.
+
+  Version 0.2.2 adds a future Purity UI evolution roadmap, outlining possible
+  v0.3 directions such as Epicenter Layer, Proto-Friction Layer, Visibility
+  Protocol, Circle Versioning, No-Inference Layer, Royalty OS Visibility, and
+  Epicenter Network.
