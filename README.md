@@ -2,7 +2,7 @@
 
 **Status:** Draft v0.2  
 **Repository:** `ai-purity-detection-algorithm-v0.2`  
-**Version:** 0.2.1
+**Version:** 0.2.2
 
 AI Purity Detection Algorithm v0.2 is a draft specification for estimating origin purity, AI-generated ratio, warning flags, recursive synthetic risk, and review routing in AI source-preservation systems.
 
@@ -20,6 +20,7 @@ It is designed to support:
 - royalty-readiness review
 - meaning-structure relationship review
 - platform UI integration patterns
+- future Purity UI control architecture
 - future API-based implementation
 
 The goal is not to reject AI-assisted creation.
@@ -59,6 +60,7 @@ This creates several risks:
 - royalty-readiness review becomes unreliable
 - meaning structures become shallow or generic
 - platform interfaces fail to show origin context
+- creator-controlled disclosure boundaries remain underdeveloped
 
 AI Purity Detection Algorithm v0.2 proposes a review-aware scoring and warning model for these risks.
 
@@ -132,6 +134,7 @@ CollapseMonitor bridge
 Royalty Readiness bridge
 Consciousness Circle bridge
 platform UI integration mock
+future Purity UI evolution roadmap
 API design notes
 ```
 
@@ -141,6 +144,7 @@ In short:
 v0.1 = minimum valid purity assessment
 v0.2 = weighted, review-aware, risk-sensitive purity assessment model
 v0.2.1 = platform UI integration reference added
+v0.2.2 = Purity UI v0.3 evolution roadmap added
 ```
 
 ---
@@ -161,7 +165,8 @@ v0.2.1 = platform UI integration reference added
 │   ├── relationship-to-royalty-readiness.md
 │   ├── relationship-to-collapse-monitor.md
 │   ├── api-design-notes.md
-│   └── ui-mock-note-integration.md
+│   ├── ui-mock-note-integration.md
+│   └── purity-ui-evolution-roadmap-v0.3.md
 ├── schemas/
 │   └── purity-assessment.schema.json
 ├── examples/
@@ -176,7 +181,7 @@ v0.2.1 = platform UI integration reference added
 ### Directory Overview
 
 - `docs/`  
-  Explanatory documents, relationship notes, scoring models, warning-severity models, API design notes, and platform UI mock references.
+  Explanatory documents, relationship notes, scoring models, warning-severity models, API design notes, platform UI mock references, and future UI evolution roadmap documents.
 
 - `schemas/`  
   JSON Schema definitions for validating Purity assessment objects.
@@ -392,6 +397,32 @@ This document translates the v0.2 specification from an algorithmic layer into a
 It is a reference design, not a mandatory implementation standard.
 
 The core purpose is to show how an article page could evolve from a simple content display into a creator-controlled semantic origin interface.
+
+---
+
+### `docs/purity-ui-evolution-roadmap-v0.3.md`
+
+Provides a future roadmap for evolving Purity UI beyond a score display or basic platform mock.
+
+It introduces possible v0.3 design directions, including:
+
+- Epicenter Layer
+- Proto-Friction Layer
+- Visibility Protocol
+- Circle Versioning
+- No-Inference Layer
+- Royalty OS Visibility
+- Epicenter Network
+
+This document is not a final specification.
+
+It is a roadmap for exploring how Purity UI may evolve into a creator-controlled origin interface and, eventually, a separate Purity UI Control Architecture.
+
+Possible future repository:
+
+```text
+purity-ui-control-architecture-v0.1
+```
 
 ---
 
@@ -772,6 +803,26 @@ See:
 docs/ui-mock-note-integration.md
 ```
 
+### Future UI Control Architecture
+
+Future versions may explore how Purity UI evolves from a display layer into a creator-controlled origin interface.
+
+Possible future UI-control concepts include:
+
+- Epicenter Layer
+- Proto-Friction Layer
+- Visibility Protocol
+- Circle Versioning
+- No-Inference Layer
+- Royalty OS Visibility
+- Epicenter Network
+
+See:
+
+```text
+docs/purity-ui-evolution-roadmap-v0.3.md
+```
+
 ---
 
 ## Relationship Map
@@ -828,6 +879,18 @@ Trace Log
 Creator Controls
 ↓
 Platform UI Integration
+```
+
+```text
+Platform UI Integration
++
+Visibility Protocol
++
+No-Inference Layer
++
+Circle Versioning
+↓
+Future Purity UI Control Architecture
 ```
 
 ---
@@ -945,6 +1008,58 @@ docs/ui-mock-note-integration.md
 
 ---
 
+## Future Extensions
+
+This repository may later connect to or seed future specifications.
+
+Possible future directions include:
+
+### Purity UI Control Architecture
+
+A future repository may define a dedicated control architecture for Purity UI.
+
+Possible repository name:
+
+```text
+purity-ui-control-architecture-v0.1
+```
+
+This future work may include:
+
+- creator-controlled visibility settings
+- no-inference policies
+- circle versioning
+- proto-friction capture
+- epicenter network visualization
+- royalty-readiness UI
+- AI-readable disclosure boundaries
+
+The current roadmap is documented in:
+
+```text
+docs/purity-ui-evolution-roadmap-v0.3.md
+```
+
+### CollapseMonitor Threshold Model
+
+A future repository may define aggregate thresholds for ecosystem-level collapse-risk monitoring.
+
+Possible repository name:
+
+```text
+collapse-monitor-threshold-model-v0.1
+```
+
+### Royalty Readiness Review Layer
+
+A future repository may define a more formal review layer between trace evidence and allocation review.
+
+### Platform API Profile
+
+A future repository or document may define an implementation-oriented API profile for Purity assessment, creator controls, and platform UI integration.
+
+---
+
 ## API Design Direction
 
 The API layer should expose:
@@ -991,6 +1106,7 @@ This repository does not attempt to:
 - force disclosure of private creator context
 - rank creators by purity score
 - define a final platform UI standard
+- define a production-ready Purity UI Control Architecture
 
 This is a review-support, platform-guidance, and ecosystem-health specification.
 
@@ -1014,7 +1130,8 @@ For readers who want to understand this repository step by step, the following o
 11. docs/relationship-to-collapse-monitor.md
 12. docs/api-design-notes.md
 13. docs/ui-mock-note-integration.md
-14. .github/workflows/validate-examples.yml
+14. docs/purity-ui-evolution-roadmap-v0.3.md
+15. .github/workflows/validate-examples.yml
 ```
 
 ### Reading Path by Role
@@ -1027,6 +1144,8 @@ README.md
 docs/v0.2-roadmap.md
 ↓
 docs/ui-mock-note-integration.md
+↓
+docs/purity-ui-evolution-roadmap-v0.3.md
 ```
 
 #### For implementers
@@ -1061,6 +1180,16 @@ docs/relationship-to-consciousness-circle.md
 docs/api-design-notes.md
 ↓
 docs/ui-mock-note-integration.md
+↓
+docs/purity-ui-evolution-roadmap-v0.3.md
+```
+
+#### For future UI-control architecture designers
+
+```text
+docs/ui-mock-note-integration.md
+↓
+docs/purity-ui-evolution-roadmap-v0.3.md
 ```
 
 ---
@@ -1076,7 +1205,7 @@ CHANGELOG.md
 Current release:
 
 ```text
-0.2.1
+0.2.2
 ```
 
 ---
@@ -1123,6 +1252,8 @@ review routing
 downstream-use guidance
 ↓
 platform UI integration
+↓
+future UI control architecture
 ```
 
 The core principle is simple:
@@ -1137,4 +1268,5 @@ Do not automate judgment too early.
 
 If AI civilization is a river, primary sources are the springs.
 
-This repository is a draft water-quality inspection model for that river.
+This repository is a draft water-quality inspection model for that river, and a starting point for future creator-controlled origin interfaces.
+
