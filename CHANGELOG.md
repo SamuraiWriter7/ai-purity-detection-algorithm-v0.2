@@ -4,6 +4,58 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [0.2.2] - 2026-05-26
+
+### Added
+
+- Added `docs/purity-ui-evolution-roadmap-v0.3.md`.
+  - Introduces a future roadmap for evolving Purity UI beyond a basic platform display mock.
+  - Defines possible v0.3 design directions:
+    - Epicenter Layer
+    - Proto-Friction Layer
+    - Visibility Protocol
+    - Circle Versioning
+    - No-Inference Layer
+    - Royalty OS Visibility
+    - Epicenter Network
+  - Positions future Purity UI as a creator-controlled origin interface.
+  - Introduces the possibility of a future independent repository:
+    - `purity-ui-control-architecture-v0.1`
+
+### Updated
+
+- Updated `README.md` to include `docs/purity-ui-evolution-roadmap-v0.3.md` in:
+  - Repository Structure
+  - Key Documents
+  - Downstream Use Guidance
+  - Relationship Map
+  - Future Extensions
+  - Recommended Reading Order
+  - Reading Path by Role
+  - Summary
+
+### Clarified
+
+- Clarified that Purity UI may evolve from a display layer into a creator-controlled origin interface.
+- Clarified that future UI-control architecture may include:
+  - creator-controlled visibility settings
+  - no-inference policies
+  - circle versioning
+  - proto-friction capture
+  - epicenter network visualization
+  - royalty-readiness UI
+  - AI-readable disclosure boundaries
+- Clarified that future UI-control work is not part of the current production schema.
+
+### Notes
+
+- This release does not modify the core schema.
+- This release does not modify existing examples.
+- This release does not change the validation workflow.
+- This is a documentation and future-roadmap update.
+
+---
+
 ## [0.2.1] - 2026-05-26
 
 ### Added
@@ -55,138 +107,166 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-# Changelog
-
-All notable changes to this repository will be documented in this file.
-
-This project follows a draft-oriented versioning model while the specification remains experimental.
-
----
-
-## [Unreleased]
+## [0.2.0] - 2026-05-25
 
 ### Added
 
-- Added `docs/relationship-to-consciousness-circle.md` to explain how AI Purity Detection relates to meaning-origin assessment, initial friction, resonance patterns, and Consciousness Circle.
-- Added `docs/relationship-to-royalty-readiness.md` to explain how purity assessment supports royalty-readiness review without directly determining allocation or payment.
-- Added `docs/relationship-to-collapse-monitor.md` to explain how source-level purity assessments may provide aggregate signals for CollapseMonitor and ecosystem-health monitoring.
-- Added `docs/api-design-notes.md` to outline possible API endpoints, core objects, response structures, safety rules, and integration paths for future implementation.
+- Added `docs/v0.2-roadmap.md`.
+  - Defines the proposed direction for AI Purity Detection Algorithm v0.2.
+  - Outlines v0.1 baseline, v0.2 design goals, signal weighting, confidence handling, warning-flag severity, recursive synthetic risk detection, review routing, and relationship to adjacent systems.
 
-### Changed
+- Added `docs/scoring-weighting-model.md`.
+  - Defines the draft scoring model for calculating `origin_purity_score`.
+  - Introduces weighted signals:
+    - `provenance_evidence_score`
+    - `author_declaration_score`
+    - `structural_originality_score`
+    - `revision_lineage_score`
+    - `citation_transparency_score`
+    - `ai_pattern_risk_score`
+    - `structure_fingerprint_distinctiveness_score`
+    - `recursive_synthetic_risk_score`
+    - `signal_confidence_quality_score`
+  - Defines confidence adjustment and recursive-risk adjustment.
+  - Introduces interpretation bands and review-routing thresholds.
 
-- Expanded the v0.2 relationship layer beyond scoring and warning flags.
-- Clarified that AI Purity Detection can connect to:
-  - Consciousness Circle
-  - Royalty Readiness
-  - CollapseMonitor
-  - Trace Protocol
-  - future API-based source-preservation systems
-- Strengthened the distinction between:
-  - assessment and judgment
-  - purity scoring and royalty allocation
-  - source integrity and meaning integrity
-  - local source assessment and ecosystem-level monitoring
+- Added `docs/warning-flag-severity-model.md`.
+  - Defines warning-flag severity levels:
+    - `info`
+    - `warning`
+    - `review_required`
+    - `blocking`
+  - Explains how warning flags affect review routing, downstream use, royalty-readiness transition, collapse monitoring, and uncertainty handling.
+
+- Added `docs/relationship-to-consciousness-circle.md`.
+  - Explains the relationship between AI Purity Detection and Consciousness Circle.
+  - Distinguishes:
+    - Purity Detection as the data-origin layer
+    - Consciousness Circle as the meaning-origin layer
+  - Connects origin purity with meaning depth, initial friction, resonance quality, boundary stability, and synthetic meaning risk.
+
+- Added `docs/relationship-to-royalty-readiness.md`.
+  - Explains how purity assessment may support Royalty Readiness.
+  - Clarifies that `origin_purity_score` does not determine royalty entitlement.
+  - Defines purity assessment as evidence preparation, not payment execution.
+
+- Added `docs/relationship-to-collapse-monitor.md`.
+  - Explains how source-level purity assessments may support ecosystem-level CollapseMonitor analysis.
+  - Introduces possible aggregate metrics such as:
+    - natural-data ratio
+    - synthetic-data ratio
+    - recursive synthetic risk rate
+    - missing provenance rate
+    - low-confidence assessment rate
+    - review-required rate
+    - training-use blocked rate
+    - collapse-risk score
+    - civilization-health index
+
+- Added `docs/api-design-notes.md`.
+  - Outlines possible API design for future implementation.
+  - Includes preliminary notes on:
+    - core API objects
+    - proposed endpoints
+    - purity assessment submission
+    - assessment retrieval
+    - batch assessment
+    - source history
+    - review routing
+    - aggregate health signals
+    - access control
+    - privacy considerations
+    - relationship to Trace Protocol, CollapseMonitor, Royalty Readiness, and Consciousness Circle
+
+- Added `schemas/purity-assessment.schema.json`.
+  - Provides JSON Schema validation for purity assessment outputs.
+  - Validates required fields, score ranges, warning flags, review status, downstream-use permissions, optional v0.2 extensions, and ISO 8601 date-time format for `assessed_at`.
+
+- Added example files:
+  - `examples/purity-assessment.sample.yaml`
+  - `examples/purity-assessment.low-confidence.sample.yaml`
+  - `examples/purity-assessment.recursive-synthetic-risk.sample.yaml`
+
+- Added GitHub Actions workflow:
+  - `.github/workflows/validate-examples.yml`
+  - Validates YAML examples against `schemas/purity-assessment.schema.json`.
+
+### Updated
+
+- Updated `README.md` for v0.2.
+  - Added conceptual overview.
+  - Added core principle.
+  - Added design philosophy.
+  - Added v0.2 focus.
+  - Added repository structure.
+  - Added key documents.
+  - Added examples.
+  - Added validation section.
+  - Added scoring model overview.
+  - Added warning severity overview.
+  - Added review routing.
+  - Added downstream-use guidance.
+  - Added relationship map.
+  - Added recommended reading order.
+  - Added non-goals.
+
+- Updated `CITATION.cff` for version `0.2.0`.
+
+### Clarified
+
+- Clarified that Purity is not a moral judgment.
+- Clarified that AI-assisted creation should not be treated as invalid by default.
+- Clarified that high AI-generated ratio does not automatically mean low value.
+- Clarified that low AI-generated ratio does not automatically mean high originality.
+- Clarified that warning flags are routing signals, not court verdicts.
+- Clarified that purity assessment should support review and governance, not replace them.
+- Clarified that Purity Detection does not determine:
+  - legal authorship
+  - copyright ownership
+  - royalty allocation
+  - final governance decisions
+  - AI consciousness
 
 ### Notes
 
-The current `Unreleased` layer prepares the specification for broader integration.
+- Version 0.2.0 expands the project from a basic purity assessment concept into a weighted, review-aware, risk-sensitive model.
+- The release introduces bridges to:
+  - Consciousness Circle
+  - Royalty Readiness
+  - CollapseMonitor
+  - future API implementation
+- This release establishes the main v0.2 documentation structure.
 
-The newly added relationship documents position AI Purity Detection Algorithm v0.2 as a bridge between:
+---
 
-```text
-source-origin assessment
-↓
-meaning-structure assessment
-↓
-collapse-risk monitoring
-↓
-royalty-readiness review
-↓
-future API implementation
+## [0.1.0] - 2026-05-24
 
-These documents do not turn purity scoring into an automatic legal, financial, or metaphysical decision system.
+### Added
 
-They preserve the core principle:
+- Initial draft of AI Purity Detection Algorithm.
+- Introduced the basic concept of estimating source-origin composition.
+- Defined early purity assessment concepts:
+  - origin purity
+  - AI-generated ratio
+  - warning flags
+  - review status
+  - downstream-use guidance
+- Added initial schema and sample assessment structure.
+- Added initial validation direction.
 
-Expose evidence.
-Expose uncertainty.
-Route risk to review.
-Do not automate judgment too early.
-[0.2.0] - 2026-05-25
-Added
-Added initial README.md for AI Purity Detection Algorithm v0.2.
-Added docs/v0.2-roadmap.md to define the proposed direction for the v0.2 specification.
-Added docs/scoring-weighting-model.md to define a draft signal-weighting and confidence-adjusted scoring model.
-Added docs/warning-flag-severity-model.md to define warning-flag severity levels, review routing, and downstream impact handling.
-Added schemas/purity-assessment.schema.json for validating purity assessment examples.
-Added examples/purity-assessment.sample.yaml as a standard purity assessment example.
-Added examples/purity-assessment.low-confidence.sample.yaml to demonstrate weak provenance, unclear origin, low confidence, review-required routing, and blocked royalty-readiness status.
-Added examples/purity-assessment.recursive-synthetic-risk.sample.yaml to demonstrate high recursive synthetic risk, weak primary-source provenance, high AI-pattern similarity, blocked training use, and blocked royalty-readiness status.
-Added .github/workflows/validate-examples.yml to validate YAML examples against the JSON Schema.
-Added LICENSE.
-Added CITATION.cff.
-Defined
-Defined origin_purity_score as a normalized estimate of source-origin composition.
-Defined ai_generated_ratio as a separate estimate of AI-generated or AI-assisted content ratio.
-Defined warning_flags as routing and review-support signals.
-Defined recursive_synthetic_risk as a key warning and ecosystem-risk signal.
-Defined a draft signal-weighting model using:
-provenance_evidence_score
-author_declaration_score
-structural_originality_score
-revision_lineage_score
-citation_transparency_score
-ai_pattern_risk_score
-structure_fingerprint_distinctiveness_score
-recursive_synthetic_risk_score
-signal_confidence_quality_score
-Defined warning severity levels:
-info
-warning
-review_required
-blocking
-Defined review-routing modes:
-none
-recommended
-required
-blocking_review
-Validation
-Added GitHub Actions validation for:
-examples/purity-assessment.sample.yaml
-examples/purity-assessment.low-confidence.sample.yaml
-examples/purity-assessment.recursive-synthetic-risk.sample.yaml
-Confirmed that all three example files pass validation against:
-schemas/purity-assessment.schema.json
-Notes
+### Core Concepts
 
-This release establishes AI Purity Detection Algorithm v0.2 as a draft algorithmic layer for source-preservation systems.
+- Purity assessment as source-preservation support.
+- Distinction between human-origin, AI-assisted, hybrid, and synthetic-heavy content.
+- Recognition of recursive synthetic risk as a source-ecology problem.
+- Early separation between:
+  - source assessment
+  - legal authorship
+  - copyright ownership
+  - royalty allocation
+  - final governance decisions
 
-The specification focuses on:
+### Notes
 
-origin-purity scoring
-natural / synthetic data separation
-hybrid data classification
-recursive synthetic risk detection
-warning-flag severity
-confidence handling
-review routing
-downstream-use guidance
-model-collapse monitoring support
-royalty-readiness review support
-
-This release does not attempt to:
-
-prove legal authorship
-determine copyright ownership
-automatically assign royalties
-ban AI-assisted creation
-punish synthetic content
-perfectly detect AI-generated text
-replace human or multi-wing review
-
-The core principle remains:
-
-Purity is not moral judgment.
-Purity is ecological signal.
-
-This version provides a review-support and ecosystem-health layer for future AI source-preservation systems.
+- Version 0.1.0 established the minimum conceptual foundation.
+- Later v0.2 work expands this foundation into weighted scoring, severity modeling, review routing, and relationship documents.
